@@ -81,7 +81,6 @@ public class DivisionCurso {
             promedio = suma / catedras.size();
             return promedio;
     }
-
     public Alumno mejorAlumnoDivision(){
         ArrayList<Alumno> alumnosCC =alumnosConCatedraCompleta();
         Alumno alumnoConMejorPormedio = null;
@@ -94,6 +93,7 @@ public class DivisionCurso {
         }
         return alumnoConMejorPormedio;
     }
+    
 }
 
 
