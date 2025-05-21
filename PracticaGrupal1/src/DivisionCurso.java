@@ -4,32 +4,36 @@ public class DivisionCurso {
     private int codigo;
     private int anio;
     private int division;
+
     private ArrayList<Catedra> catedras;
     private Escuela escuela;
 
-        public DivisionCurso(int codigo, int anio, int division,ArrayList<Catedra> catedras,Escuela escuela) {
+
+    public DivisionCurso(int codigo, int anio, int division,ArrayList<Catedra> catedras,Escuela escuela) {
         this.codigo = codigo;
         this.anio = anio;
         this.division = division;
         this.catedras=catedras;
         this.escuela=escuela;
     }
-    @Override
-    public String toString() {
-        return "DivisionCurso{" + "codigo=" + codigo + ", anio=" + anio + ", division=" + division + '}';
-    }
+
+
     public int getCodigo() {
         return codigo;
     }
+
     public int getAnio() {
         return anio;
     }
+
     public int getDivision() {
         return division;
     }
+
     public ArrayList<Catedra> getCatedras() {
         return catedras;
     }
+
     public Escuela getEscuela() {
         return escuela;
     }
@@ -37,21 +41,27 @@ public class DivisionCurso {
     public void setAnio(int anio) {
         this.anio = anio;
     }
+
     public void setDivision(int division) {
         this.division = division;
     }
+
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
+
     public void setCatedras(ArrayList<Catedra> catedras) {
         this.catedras = catedras;
     }
+
     public void setEscuela(Escuela escuela) {
         this.escuela = escuela;
     }
+
     public void addCatedra(Catedra catedra){
         this.catedras.add(catedra);
     }
+
     //Codifique en la clase DivisionCurso un método
     //denominado “public Alumno mejorAlumnoDivisionCurso()” que
     //retorne el alumno con mejor promedio de notas contemplando la
@@ -93,7 +103,12 @@ public class DivisionCurso {
         }
         return alumnoConMejorPormedio;
     }
-    
+
+
+    @Override
+    public String toString() {
+        return "DivisionCurso{" + "codigo=" + codigo + ", anio=" + anio + ", division=" + division + '}';
+    }
 }
 
 

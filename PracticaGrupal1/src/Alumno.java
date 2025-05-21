@@ -6,6 +6,7 @@ public class Alumno {
     private String nombre;
     private String apellido;
     private Date fechaNacimiento;
+
     private ArrayList<Nota> notas;
     private DivisionCurso curso;
     private ArrayList<Catedra> catedra;
@@ -21,6 +22,7 @@ public class Alumno {
         this.catedra = catedra;
         this.NotasCatedrasCompletadas = catedrasCompletadas();
     }
+
 
     public Nota mejorNota(Integer codigoCatedra){
         Nota mejorNota = null;
@@ -76,8 +78,6 @@ public class Alumno {
             }
         }return true;
     }
-
-
 
     public long getLegajo() {
         return legajo;
