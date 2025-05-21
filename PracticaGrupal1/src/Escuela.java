@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Escuela {
     private int numero;
@@ -7,10 +6,9 @@ public class Escuela {
 
     private ArrayList<DivisionCurso> division;
 
-    public Escuela(int numero, String denominacion,ArrayList<DivisionCurso> division) {
+    public Escuela(int numero, String denominacion) {
         this.numero = numero;
         this.denominacion = denominacion;
-        this.division=division;
     }
 
     public ArrayList<DivisionCurso> getDivision() {

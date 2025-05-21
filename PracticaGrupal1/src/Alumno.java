@@ -12,15 +12,11 @@ public class Alumno {
     private ArrayList<Catedra> catedra;
     private boolean NotasCatedrasCompletadas;
 
-    public Alumno(long legajo, String nombre, String apellido, Date fechaNacimiento,DivisionCurso curso,ArrayList<Catedra> catedra) {
+    public Alumno(long legajo, String nombre, String apellido, Date fechaNacimiento) {
         this.legajo = legajo;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
-        this.notas = new ArrayList<>();
-        this.curso=curso;
-        this.catedra = catedra;
-        this.NotasCatedrasCompletadas = catedrasCompletadas();
     }
 
 
@@ -44,7 +40,6 @@ public class Alumno {
     public Double promedioNotas(Integer codigoCatedra){
         ArrayList<Double> notasCatedra = new ArrayList<>();
         Double suma = 0.0;
-        Double promedio = 0.0;
 
         if (codigoCatedra != null) {
             for (Nota nota : notas) {
@@ -60,8 +55,8 @@ public class Alumno {
                 notasCatedra.add(nota.getValor());
             }
         }
-        promedio = suma / notasCatedra.size();
-        return  promedio;
+
+        return  suma / notasCatedra.size();
     }
 
     public boolean catedrasCompletadas(){

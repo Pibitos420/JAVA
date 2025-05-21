@@ -9,10 +9,9 @@ public class Catedra {
     private ArrayList<Nota> notas;
 
 
-    public Catedra(int codigo, String denominacion,ArrayList<Alumno> alumnos) {
+    public Catedra(int codigo, String denominacion) {
         this.codigo = codigo;
         this.denominacion = denominacion;
-        this.alumnos=alumnos;
     }
 
 

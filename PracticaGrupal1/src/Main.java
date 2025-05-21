@@ -1,15 +1,37 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Escuela
+        Escuela escuela = new Escuela(123, "Escuela Nacional");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // DivisionCurso
+        DivisionCurso division1 = new DivisionCurso(1, 2024, 3);
+        ArrayList<DivisionCurso> divisiones = new ArrayList<>();
+        divisiones.add(division1);
+        escuela.setDivision(divisiones);
+
+        // Catedra
+        Catedra catedra1 = new Catedra(10, "Matemática");
+
+        // Alumno
+        Alumno alumno1 = new Alumno(1001L, "Juan", "Cruz", new Date());
+
+        // Nota
+        Nota nota1 = new Nota(1, 9.5, new Date(), false);
+        Nota nota2 = new Nota(2, 7.0, new Date(), true);
+        ArrayList<Nota> notas = new ArrayList<>();
+        notas.add(nota1);
+        notas.add(nota2);
+
+        alumno1.mejorNota(nota1);
+        catedra1.addAlumno(alumno1);
+        division1.addCatedra(catedra1);
+
+        System.out.println("Alumno cargado: " + alumno1.getNombre() + " " + alumno1.getApellido());
+        System.out.println("Cátedra: " + catedra1.getDenominacion());
+        System.out.println("Escuela: " + escuela.getDenominacion());
+
     }
 }

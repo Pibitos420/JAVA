@@ -9,12 +9,10 @@ public class DivisionCurso {
     private Escuela escuela;
 
 
-    public DivisionCurso(int codigo, int anio, int division,ArrayList<Catedra> catedras,Escuela escuela) {
+    public DivisionCurso(int codigo, int anio, int division) {
         this.codigo = codigo;
         this.anio = anio;
         this.division = division;
-        this.catedras=catedras;
-        this.escuela=escuela;
     }
 
 
