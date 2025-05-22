@@ -6,7 +6,6 @@ public class DivisionCurso {
     private int division;
 
     private ArrayList<Catedra> catedras;
-    private Escuela escuela;
 
     public DivisionCurso(int codigo, int anio, int division) {
         this.codigo = codigo;
@@ -38,25 +37,6 @@ public class DivisionCurso {
         this.division = division;
     }
 
-    public ArrayList<Catedra> getCatedras() {
-        return catedras;
-    }
-
-    public void setCatedras(ArrayList<Catedra> catedras) {
-        this.catedras = catedras;
-    }
-
-    public Escuela getEscuela() {
-        return escuela;
-    }
-
-    public void setEscuela(Escuela escuela) {
-        this.escuela = escuela;
-    }
-
-    public void addCatedra(Catedra catedra){
-        this.catedras.add(catedra);
-    }
 
     //Codifique en la clase DivisionCurso un método
     //denominado “public Alumno mejorAlumnoDivisionCurso()” que

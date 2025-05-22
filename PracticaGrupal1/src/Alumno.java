@@ -51,33 +51,7 @@ public class Alumno {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public ArrayList<Nota> getNotas() {
-        return notas;
-    }
 
-    // No hay setNotas(), solo addNota
-
-    public DivisionCurso getCurso() {
-        return curso;
-    }
-
-    public void setCurso(DivisionCurso curso) {
-        this.curso = curso;
-    }
-
-    public ArrayList<Catedra> getCatedra() {
-        return catedra;
-    }
-
-    // No hay setter individual, pero sí un addCatedra
-
-    public void addNota(Nota nota) {
-        this.notas.add(nota);
-    }
-
-    public void addCatedra(ArrayList<Catedra> catedra) {
-        this.catedra.addAll(catedra);
-    }
 
     public Nota mejorNota(Integer codigoCatedra){
         Nota mejorNota = null;

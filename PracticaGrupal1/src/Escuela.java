@@ -28,18 +28,7 @@ public class Escuela {
         this.denominacion = denominacion;
     }
 
-    public ArrayList<DivisionCurso> getDivision() {
-        return division;
-    }
 
-    public void setDivision(ArrayList<DivisionCurso> division) {
-        this.division = division;
-    }
-
-
-    public void addDivision(DivisionCurso division){
-        this.division.add(division);
-    }
 
     //Codifique en la clase Escuela un método denominado
     //“public Alumno getMejorAlumnoEscuela(int
@@ -47,7 +36,7 @@ public class Escuela {
     //cuya fecha de nacimiento sea de un año determinado y que nunca hayan
     //desaprobado exámenes.
 
-    public Alumno getMejorAlumno(int anioNacimiento){
+    public Alumno getMejorAlumnoEscuela(int anioNacimiento){
         for (DivisionCurso division : division) {
             if(division.getAnio() == anioNacimiento){
                 return division.mejorAlumnoDivision();
@@ -56,9 +45,6 @@ public class Escuela {
         return null;
     }
 
-    //    public ArrayList<Alumno> getMejoresAlumnos(int anioNacimiento){
-    //
-    //    };
 
     @Override
     public String toString() {

@@ -46,21 +46,6 @@ public class Nota {
         this.esRecuperatorio = esRecuperatorio;
     }
 
-    public Alumno getAlumno() {
-        return alumno;
-    }
-
-    public void setAlumno(Alumno alumno) {
-        this.alumno = alumno;
-    }
-
-    public Catedra getCatedra() {
-        return catedra;
-    }
-
-    public void setCatedra(Catedra catedra) {
-        this.catedra = catedra;
-    }
 
     @Override
     public String toString() {

@@ -29,37 +29,7 @@ public class Catedra {
         this.denominacion = denominacion;
     }
 
-    public ArrayList<Alumno> getAlumnos() {
-        return alumnos;
-    }
 
-    public void setAlumnos(ArrayList<Alumno> alumnos) {
-        this.alumnos = alumnos;
-    }
-
-    public DivisionCurso getDivision() {
-        return division;
-    }
-
-    public void setDivision(DivisionCurso division) {
-        this.division = division;
-    }
-
-    public ArrayList<Nota> getNotas() {
-        return notas;
-    }
-
-    public void setNotas(ArrayList<Nota> notas) {
-        this.notas = notas;
-    }
-
-    public void addAlumno(Alumno alumno){
-        this.alumnos.add(alumno);
-    }
-
-    public void addNota(Nota nota){
-        this.notas.add(nota);
-    }
 
     public Alumno mejorAlumnoCatedra(){
         Double mejorPromedio = null;
