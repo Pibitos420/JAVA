@@ -8,48 +8,46 @@ public class DivisionCurso {
     private ArrayList<Catedra> catedras;
     private Escuela escuela;
 
-
     public DivisionCurso(int codigo, int anio, int division) {
         this.codigo = codigo;
         this.anio = anio;
         this.division = division;
     }
 
-
     public int getCodigo() {
         return codigo;
-    }
-
-    public int getAnio() {
-        return anio;
-    }
-
-    public int getDivision() {
-        return division;
-    }
-
-    public ArrayList<Catedra> getCatedras() {
-        return catedras;
-    }
-
-    public Escuela getEscuela() {
-        return escuela;
-    }
-
-    public void setAnio(int anio) {
-        this.anio = anio;
-    }
-
-    public void setDivision(int division) {
-        this.division = division;
     }
 
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
+    public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    public int getDivision() {
+        return division;
+    }
+
+    public void setDivision(int division) {
+        this.division = division;
+    }
+
+    public ArrayList<Catedra> getCatedras() {
+        return catedras;
+    }
+
     public void setCatedras(ArrayList<Catedra> catedras) {
         this.catedras = catedras;
+    }
+
+    public Escuela getEscuela() {
+        return escuela;
     }
 
     public void setEscuela(Escuela escuela) {
@@ -68,29 +66,32 @@ public class DivisionCurso {
 
     public ArrayList<Alumno> alumnosConCatedraCompleta(){
         ArrayList<Alumno> alumnosConCatedraCompleta = new ArrayList<>();
-        //Recorre todos los alumnos que hayan completado todas
-        //las catedras con mas de 5 contas (Metodo catedraCompletada())
+        // Recorre todos los alumnos que hayan completado todas
+        // las catedras con mas de 5 contas (Metodo catedraCompletada())
         for(Catedra catedra  : catedras){
             for (Alumno alumno : catedra.getAlumnos()) {
                 if(alumno.catedrasCompletadas()){
-                    alumnosConCatedraCompleta.add(alumno);}
+                    alumnosConCatedraCompleta.add(alumno);
+                }
             }
         }
         return alumnosConCatedraCompleta;
     }
+
     public Double PromedioDeNotasPorAlumno(Alumno alumno){
-            Double suma = 0.0;
-            Double promedioActual = 0.0;
-            Double promedio = 0.0;
-            for (Catedra catedra : catedras) {
-                promedioActual = alumno.promedioNotas(catedra.getCodigo());
-                suma += promedioActual;
-            }
-            promedio = suma / catedras.size();
-            return promedio;
+        Double suma = 0.0;
+        Double promedioActual = 0.0;
+        Double promedio = 0.0;
+        for (Catedra catedra : catedras) {
+            promedioActual = alumno.promedioNotas(catedra.getCodigo());
+            suma += promedioActual;
+        }
+        promedio = suma / catedras.size();
+        return promedio;
     }
+
     public Alumno mejorAlumnoDivision(){
-        ArrayList<Alumno> alumnosCC =alumnosConCatedraCompleta();
+        ArrayList<Alumno> alumnosCC = alumnosConCatedraCompleta();
         Alumno alumnoConMejorPormedio = null;
         Double promedio = 0.0;
         for(Alumno alumno : alumnosCC){
@@ -102,12 +103,8 @@ public class DivisionCurso {
         return alumnoConMejorPormedio;
     }
 
-
     @Override
     public String toString() {
         return "DivisionCurso{" + "codigo=" + codigo + ", anio=" + anio + ", division=" + division + '}';
     }
 }
-
-
-

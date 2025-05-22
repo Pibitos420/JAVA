@@ -19,6 +19,65 @@ public class Alumno {
         this.fechaNacimiento = fechaNacimiento;
     }
 
+    public long getLegajo() {
+        return legajo;
+    }
+
+    public void setLegajo(long legajo) {
+        this.legajo = legajo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public ArrayList<Nota> getNotas() {
+        return notas;
+    }
+
+    // No hay setNotas(), solo addNota
+
+    public DivisionCurso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(DivisionCurso curso) {
+        this.curso = curso;
+    }
+
+    public ArrayList<Catedra> getCatedra() {
+        return catedra;
+    }
+
+    // No hay setter individual, pero sí un addCatedra
+
+    public void addNota(Nota nota) {
+        this.notas.add(nota);
+    }
+
+    public void addCatedra(ArrayList<Catedra> catedra) {
+        this.catedra.addAll(catedra);
+    }
 
     public Nota mejorNota(Integer codigoCatedra){
         Nota mejorNota = null;
@@ -68,72 +127,16 @@ public class Alumno {
                 if (nota.getCatedra().equals(catedra.getCodigo())){
                     contador++;
                 }
-            }if (contador < 5){
+            }
+            if (contador < 5){
                 return false;
             }
-        }return true;
+        }
+        return true;
     }
-
-    public long getLegajo() {
-        return legajo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public ArrayList<Nota> getNotas() {
-        return notas;
-    }
-
-    public DivisionCurso getCurso() {
-        return curso;
-    }
-
-    public void setLegajo(long legajo) {
-        this.legajo = legajo;
-    }
-
-    public ArrayList<Catedra> getCatedra() {
-        return catedra;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public void addNota(Nota nota) {
-        this.notas.add(nota);
-    }
-
-    public void setCurso(DivisionCurso curso) {
-        this.curso = curso;
-    }
-
-    public void addCatedra(ArrayList<Catedra> catedra) {
-        this.catedra.addAll(catedra);
-    }
-
 
     @Override
     public String toString() {
         return "Alumno{" + "legajo=" + legajo + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento + '}';
     }
-
 }

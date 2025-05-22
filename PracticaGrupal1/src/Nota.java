@@ -9,7 +9,6 @@ public class Nota {
     private Alumno alumno;
     private Catedra catedra;
 
-
     public Nota(int id, Double valor, Date fechaExamen, boolean esRecuperatorio) {
         this.id = id;
         this.valor = valor;
@@ -21,44 +20,46 @@ public class Nota {
         return id;
     }
 
+    // No tiene setId()
+
     public Double getValor() {
         return valor;
-    }
-
-    public Date getFechaExamen() {
-        return fechaExamen;
-    }
-
-    public Alumno getAlumno() {
-        return alumno;
-    }
-
-    public Catedra getCatedra() {
-        return catedra;
-    }
-
-    public boolean getEsRecuperatorio() {
-        return esRecuperatorio;
     }
 
     public void setValor(Double valor) {
         this.valor = valor;
     }
 
+    public Date getFechaExamen() {
+        return fechaExamen;
+    }
+
     public void setFechaExamen(Date fechaExamen) {
         this.fechaExamen = fechaExamen;
+    }
+
+    public boolean getEsRecuperatorio() {
+        return esRecuperatorio;
     }
 
     public void setEsRecuperatorio(boolean esRecuperatorio) {
         this.esRecuperatorio = esRecuperatorio;
     }
 
-    public void setCatedra(Catedra catedra) {
-        this.catedra = catedra;
+    public Alumno getAlumno() {
+        return alumno;
     }
 
     public void setAlumno(Alumno alumno) {
         this.alumno = alumno;
+    }
+
+    public Catedra getCatedra() {
+        return catedra;
+    }
+
+    public void setCatedra(Catedra catedra) {
+        this.catedra = catedra;
     }
 
     @Override

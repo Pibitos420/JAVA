@@ -21,11 +21,11 @@ public class Main {
         // Nota
         Nota nota1 = new Nota(1, 9.5, new Date(), false);
         Nota nota2 = new Nota(2, 7.0, new Date(), true);
-        ArrayList<Nota> notas = new ArrayList<>();
-        notas.add(nota1);
-        notas.add(nota2);
+        //ArrayList<Nota> notas = new ArrayList<>();
+        //notas.add(nota1);
+        //notas.add(nota2);
 
-        alumno1.mejorNota(nota1);
+        //alumno1.mejorNota(nota1);
         catedra1.addAlumno(alumno1);
         division1.addCatedra(catedra1);
 
