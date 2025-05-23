@@ -8,16 +8,38 @@ public class Alumno {
     private Date fechaNacimiento;
 
     private ArrayList<Nota> notas;
-    private DivisionCurso curso;
     private ArrayList<Catedra> catedra;
-    private boolean NotasCatedrasCompletadas;
 
     public Alumno(long legajo, String nombre, String apellido, Date fechaNacimiento) {
         this.legajo = legajo;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
+        this.notas = new ArrayList<>();
     }
+
+    public Nota bestNota(Integer codigoCatedra){
+
+    }
+
+
+    public Nota mejorNota(Integer codigoCatedra){
+        Nota mejorNota = null;
+
+        for (Nota nota : notas) {
+            if (nota.getEsRecuperatorio()){
+                continue;
+            }
+            if(codigoCatedra != null && !codigoCatedra.equals(nota.getCatedra().getCodigo())){
+                continue;
+            }
+            if (mejorNota == null || nota.getValor() > mejorNota.getValor()) {
+                mejorNota = nota;
+            }
+        }
+        return mejorNota;
+    }
+
 
     public long getLegajo() {
         return legajo;
@@ -51,24 +73,17 @@ public class Alumno {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-
-
-    public Nota mejorNota(Integer codigoCatedra){
-        Nota mejorNota = null;
-
-        for (Nota nota : notas) {
-            if (nota.getEsRecuperatorio()){
-                continue;
-            }
-            if(codigoCatedra != null && !codigoCatedra.equals(nota.getCatedra().getCodigo())){
-                continue;
-            }
-            if (mejorNota == null || nota.getValor() > mejorNota.getValor()) {
-                mejorNota = nota;
-            }
-        }
-        return mejorNota;
+    public ArrayList<Nota> getNotas() {
+        return notas;
     }
+
+    public void setNotas(ArrayList<Nota> notas) {
+        this.notas = notas;
+    }
+
+
+
+
 
     public Double promedioNotas(Integer codigoCatedra){
         ArrayList<Double> notasCatedra = new ArrayList<>();

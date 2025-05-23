@@ -6,11 +6,14 @@ public class DivisionCurso {
     private int division;
 
     private ArrayList<Catedra> catedras;
+    private ArrayList<Escuela> escuelas;
 
     public DivisionCurso(int codigo, int anio, int division) {
         this.codigo = codigo;
         this.anio = anio;
         this.division = division;
+        this.catedras = new ArrayList<>();
+        this.escuelas = new ArrayList<>();
     }
 
     public int getCodigo() {
@@ -36,6 +39,24 @@ public class DivisionCurso {
     public void setDivision(int division) {
         this.division = division;
     }
+
+    public ArrayList<Catedra> getCatedras(){
+        return catedras;
+    }
+
+    public void setCatedras(ArrayList<Catedra> catedras) {
+        this.catedras = catedras;
+    }
+
+    public ArrayList<Escuela> getEscuelas() {
+        return escuelas;
+    }
+    
+    public void setEscuelas(ArrayList<Escuela> escuelas) {
+        this.escuelas = escuelas;
+    }
+
+
 
 
     //Codifique en la clase DivisionCurso un método

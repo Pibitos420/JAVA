@@ -6,11 +6,12 @@ public class Catedra {
 
     private ArrayList<Alumno> alumnos;
     private ArrayList<Nota> notas;
-    //private DivisionCurso division;
 
     public Catedra(int codigo, String denominacion) {
         this.codigo = codigo;
         this.denominacion = denominacion;
+        this.alumnos = new ArrayList<>();
+        this.notas = new ArrayList<>();
     }
 
     public int getCodigo() {
@@ -28,6 +29,23 @@ public class Catedra {
     public void setDenominacion(String denominacion) {
         this.denominacion = denominacion;
     }
+
+    public void getAlumnos() {
+        this.alumnos = alumnos;
+    }
+
+    public void setAlumnos(ArrayList<Alumno> alumnos) {
+        this.alumnos = alumnos;
+    }
+
+    public void getNotas(ArrayList<Nota> notas) {
+        this.notas = notas;
+    }
+
+    public void setNotas(ArrayList<Nota> notas) {
+        this.notas = notas;
+    }
+
 
 
 
