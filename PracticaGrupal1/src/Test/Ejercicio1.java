@@ -9,7 +9,7 @@ public class Ejercicio1 {
         Catedra matematica = new Catedra(1, "Matematica");
         Catedra historia = new Catedra(2, "Historia");
 
-        Alumno alumno1 = new Alumno(1001L, "Juan", "Cruz", new Date());
+        Alumno alumno1 = new Alumno(1001L, "JuanCruz", "Ana", new Date());
 
         // Notas (id, valor, fecha, esRecuperatorio, catedra)
         alumno1.agregarNota(new Nota(1, 8.5, new Date(), false, matematica));

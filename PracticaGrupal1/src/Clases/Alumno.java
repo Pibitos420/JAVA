@@ -20,6 +20,28 @@ public class Alumno {
         this.notas = new ArrayList<>();
     }
 
+    public Double promedioNotas(Integer codigoCatedra){
+        ArrayList<Double> notasCatedra = new ArrayList<>();
+        Double suma = 0.0;
+
+        if (codigoCatedra != null) {
+            for (Clases.Nota nota : notas) {
+                if (nota.getCatedra().getCodigo() == codigoCatedra) {
+                    suma += nota.getValor();
+                    notasCatedra.add(nota.getValor());
+                }
+            }
+        }
+        else{
+            for (Clases.Nota nota : notas) {
+                suma += nota.getValor();
+                notasCatedra.add(nota.getValor());
+            }
+        }
+
+        return  suma / notasCatedra.size();
+    }
+
     public void agregarNota(Nota nota) {
         notas.add(nota);
     }
