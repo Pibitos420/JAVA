@@ -9,7 +9,7 @@ public class Ejercicio3 {
         Catedra matematica = new Catedra(1, "Matemática");
 
         // Crear alumnos
-        Alumno alumno1 = new Alumno(1001, "JuanCriz", "Ana", new Date());
+        Alumno alumno1 = new Alumno(1001, "JuanCruz", "Ana", new Date());
         Alumno alumno2 = new Alumno(1002, "Santiago", "Sordi", new Date());
         Alumno alumno3 = new Alumno(1003, "Mati", "Gobi", new Date());
 
@@ -37,6 +37,7 @@ public class Ejercicio3 {
         } else {
             System.out.println("No hay alumnos en la cátedra.");
         }
+        System.out.println(matematica.mejorAlumnoCatedra());
     }
 
 }

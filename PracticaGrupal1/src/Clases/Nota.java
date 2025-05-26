@@ -19,6 +19,9 @@ public class Nota {
         this.catedra = catedra;
     }
 
+    public Nota(int id, double valor, Date fechaExamen, boolean esRecuperatorio) {
+    }
+
     public int getId() {
         return id;
     }

@@ -9,10 +9,32 @@ public class Catedra {
     private ArrayList<Clases.Alumno> alumnos;
     //private ArrayList<Clases.Nota> notas;
 
+
     public Catedra(int codigo, String denominacion) {
         this.codigo = codigo;
         this.denominacion = denominacion;
         this.alumnos = new ArrayList<Alumno>();
+    }
+
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getDenominacion() {
+        return denominacion;
+    }
+
+    public void setDenominacion(String denominacion) {
+        this.denominacion = denominacion;
+    }
+
+    public ArrayList<Alumno> getAlumnos() {
+        return alumnos;
+    }
+
+    public void agregarAlumno(Alumno alumnos) {
+        this.alumnos.add(alumnos);
     }
 
     public Clases.Alumno mejorAlumnoCatedra(){
@@ -32,23 +54,6 @@ public class Catedra {
     public int getCodigo() {
         return codigo;
     }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-    public String getDenominacion() {
-        return denominacion;
-    }
-
-    public void setDenominacion(String denominacion) {
-        this.denominacion = denominacion;
-    }
-
-    public ArrayList<Alumno> getAlumnos() {
-        return alumnos;
-    }
-
 
     @Override
     public String toString() {

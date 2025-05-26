@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Escuela {
     private int numero;
     private String denominacion;
+
     private ArrayList<DivisionCurso> division;
 
 
