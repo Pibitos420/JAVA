@@ -12,12 +12,29 @@ public class Ejercicio2 {
         // Crear alumno
         Alumno alumno1= new Alumno(1234, "JuanCruz", "Ana", new Date());
 
+        // Crear notas
+        Nota nota1 = new Nota(1, 7.0, new Date(), false);
+        nota1.setCatedra(matematica);
+
+        Nota nota2 = new Nota(2, 6.0, new Date(), true);
+        nota2.setCatedra(historia);
+
+        Nota nota3 = new Nota(3, 9.2, new Date(), false);
+        nota3.setCatedra(historia);
+
+        Nota nota4 = new Nota(4, 7.0, new Date(), false);
+        nota4.setCatedra(matematica);
+
+        Nota nota5 = new Nota(5, 5.0, new Date(), false);
+        nota5.setCatedra(historia);
+
         // Agregar notas de Matemática
-        alumno1.agregarNota(new Nota(1, 8.0, new Date(), false, matematica));
-        alumno1.agregarNota(new Nota(2, 6.0, new Date(), false, matematica));
+        alumno1.agregarNota(nota1);
+        alumno1.agregarNota(nota2);
+
         // Agregar notas de Historia
-        alumno1.agregarNota(new Nota(3, 9.0, new Date(), false, historia));
-        alumno1.agregarNota(new Nota(4, 7.0, new Date(), false, historia));
+        alumno1.agregarNota(nota3);
+        alumno1.agregarNota(nota5);
 
         // Promedio general
         System.out.println("Promedio general: " + alumno1.promedioNotas(null)); // Debería ser 7.5

@@ -9,18 +9,15 @@ public class Nota {
     private boolean esRecuperatorio;
 
     private Catedra catedra;
-    //private Clases.Alumno alumno;
 
-    public Nota(int id, Double valor, Date fechaExamen, boolean esRecuperatorio, Catedra catedra) {
+    public Nota(int id, Double valor, Date fechaExamen, boolean esRecuperatorio) {
         this.id = id;
         this.valor = valor;
         this.fechaExamen = fechaExamen;
         this.esRecuperatorio = esRecuperatorio;
-        this.catedra = catedra;
+        this.catedra = null;
     }
 
-    public Nota(int id, double valor, Date fechaExamen, boolean esRecuperatorio) {
-    }
 
     public int getId() {
         return id;
@@ -52,6 +49,10 @@ public class Nota {
 
     public Catedra getCatedra() {
         return catedra;
+    }
+
+    public void setCatedra(Catedra cat) {
+        this.catedra = cat;
     }
 
     @Override

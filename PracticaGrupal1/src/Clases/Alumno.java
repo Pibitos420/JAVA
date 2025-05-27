@@ -20,6 +20,29 @@ public class Alumno {
         this.notas = new ArrayList<>();
     }
 
+    public boolean nuncaDesaprobo() {
+        for (Nota nota : this.notas) {
+            if (!nota.getEsRecuperatorio() && nota.getValor() != null && nota.getValor() < 6.0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public double promedioNotasGeneral() {
+        double suma = 0.0;
+        int count = 0;
+        for (Nota nota : this.notas) {
+            if (!nota.getEsRecuperatorio() && nota.getValor() != null) {
+                suma += nota.getValor();
+                count++;
+            }
+        }
+        return count > 0 ? suma / count : 0.0;
+    }
+
+
+
     public Double promedioNotas(Integer codigoCatedra){
         ArrayList<Double> notasCatedra = new ArrayList<>();
         Double suma = 0.0;
@@ -46,22 +69,26 @@ public class Alumno {
         notas.add(nota);
     }
 
-    public Nota mejorNota(Integer codigoCatedra){
-        Nota mejorNota = null;
 
-        for (Nota nota : notas) {
-            if (nota.getEsRecuperatorio()){
+    public Nota mejorNota(Integer codigoCatedra) {
+        Nota mejorNota = null;
+        for (Nota nota : this.notas) {
+            // Filtrar por recuperatorio
+            if (nota.getEsRecuperatorio()) {
                 continue;
             }
-            if(codigoCatedra != null && !codigoCatedra.equals(nota.getCatedra().getCodigo())){
+            // Filtrar por cátedra si corresponde
+            if (codigoCatedra != null && (nota.getCatedra() == null || nota.getCatedra().getCodigo() != codigoCatedra)) {
                 continue;
             }
-            if (mejorNota == null || nota.getValor() > mejorNota.getValor()) {
+            // Comparar valores de nota
+            if (mejorNota == null || (nota.getValor() != null && nota.getValor() > mejorNota.getValor())) {
                 mejorNota = nota;
             }
         }
         return mejorNota;
     }
+
 
     public long getLegajo() {
         return legajo;
